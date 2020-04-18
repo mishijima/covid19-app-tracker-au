@@ -48,4 +48,4 @@ Contains some simple tests.
 
 ## Notes
 
-This application meant for personal use only and **not meant** to be distributed on the Google Play / Apple App Store because they prohibit applications that are related to COVID-19 if it doesn't come from authorised institutions.
+This application meant for personal use only and **not meant** to be distributed on the Google Play / Apple App Store because they prohibit applications that are related to COVID-19 that don't come from authorised institutions.
