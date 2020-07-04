@@ -114,9 +114,4 @@ class LocationModel {
     }
     return LocationModel._(date, place, countStr);
   }
-//  factory LocationModel.fromJson(Map<String, dynamic> json) {
-//    final int cases = !isEmpty(json['Cases']) ? int.parse(json['Cases']) : 0;
-//
-//    return LocationModel(json['Location'], cases, json['Date']);
-//  }
 }
