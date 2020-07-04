@@ -6,7 +6,6 @@ import 'package:covid19_app/widgets/states_summary.dart';
 import 'package:flutter/material.dart';
 import 'package:http/io_client.dart';
 
-import '../widgets/age_distribution.dart';
 import '../widgets/national_summary.dart';
 
 class DashboardView extends StatefulWidget {
@@ -57,8 +56,6 @@ class _DashboardViewState extends State<DashboardView> {
                     SizedBox(height: 10),
                     StatesSummary(data: theGuardianModel.states),
                     SizedBox(height: 10),
-                    AgeDistribution(
-                        ageDistribution: theGuardianModel.ageDistribution),
                   ],
                 ),
               ),

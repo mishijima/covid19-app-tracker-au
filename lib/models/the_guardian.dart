@@ -3,11 +3,10 @@ import 'package:quiver/strings.dart';
 class TheGuardianModel {
   final List<StateOrTerritoryModel> states;
   final StateOrTerritoryModel national;
-  final List<AgeDistributionModel> ageDistribution;
   final List<LocationMetadataModel> locations;
 
   TheGuardianModel(
-      this.states, this.national, this.ageDistribution, this.locations);
+      this.states, this.national, this.locations);
 
   factory TheGuardianModel.fromJson(Map<String, dynamic> json) {
     List<StateOrTerritoryModel> states =
@@ -22,43 +21,14 @@ class TheGuardianModel {
         break;
       }
     }
-
     states.remove(national);
-
-    List<AgeDistributionModel> ageDistribution =
-        (json['sheets']['age distribution'] as List)
-            .map((item) => AgeDistributionModel.fromJson(item))
-            .toList();
 
     List<LocationMetadataModel> locations =
         (json['sheets']['locations'] as List)
             .map((item) => LocationMetadataModel.fromJson(item))
             .toList();
 
-    return TheGuardianModel(states, national, ageDistribution, locations);
-  }
-}
-
-class AgeDistributionModel {
-  final String state;
-  final String ageGroup;
-  final int female;
-  final int male;
-  final int noSexStated;
-  final int total;
-
-  AgeDistributionModel(this.state, this.ageGroup, this.female, this.male,
-      this.noSexStated, this.total);
-
-  factory AgeDistributionModel.fromJson(Map<String, dynamic> json) {
-    final int female = !isEmpty(json['Female']) ? int.parse(json['Female']) : 0;
-    final int male = !isEmpty(json['Male']) ? int.parse(json['Male']) : 0;
-    final int noSexStated =
-        !isEmpty(json['No sex stated']) ? int.parse(json['No sex stated']) : 0;
-    final int total = !isEmpty(json['Total']) ? int.parse(json['Total']) : 0;
-
-    return AgeDistributionModel(
-        json['State'], json['Age group'], female, male, noSexStated, total);
+    return TheGuardianModel(states, national, locations);
   }
 }
 
