@@ -51,8 +51,6 @@ void main() {
       var result = await provider.fetchTheGuardianModel();
 
       expect(result, isInstanceOf<TheGuardianModel>());
-      expect(
-          result.ageDistribution, isInstanceOf<List<AgeDistributionModel>>());
       expect(result.locations, isInstanceOf<List<LocationMetadataModel>>());
       // There shouldn't be a national data in this test
       expect(result.national, null);
